@@ -7,7 +7,7 @@ async function fetchUsers() {
 }
 
 export default async function DashboardPage() {
-  const { data } = await fetchUsers();
+  const { users = [] } = await fetchUsers();
 
   return <UserList users={data?.users} />;
 }
