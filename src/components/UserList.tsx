@@ -10,7 +10,7 @@ interface UserListProps {
 
 export function UserList({ users }: UserListProps) {
   // BUG: users can be undefined when API returns empty response
-  const names = users.map(u => u.name);
+  const names = (users || []).map(u => u.name);
 
   return (
     <ul>
